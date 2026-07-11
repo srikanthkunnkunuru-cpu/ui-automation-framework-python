@@ -3,3 +3,5 @@ VALID_USERNAME = "standard_user"
 VALID_PASSWORD = "secret_sauce"
 INVALID_USERNAME = "wrong_user"
 INVALID_PASSWORD = "wrong_password"
+import os
+HEADLESS = os.environ.get("CI") == "true"

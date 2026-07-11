@@ -2,12 +2,13 @@ from playwright.sync_api import sync_playwright, expect
 from pages.login_page import LoginPage
 from pages.inventory_page import InventoryPage
 from pages.cart_page import CartPage
+from utils.constants import HEADLESS
 from utils.constants import BASE_URL, VALID_USERNAME, VALID_PASSWORD
 
 
 def test_multiple_items():
     with sync_playwright() as p:
-        browser = p.chromium.launch(headless=False)
+        browser = p.chromium.launch(headless=HEADLESS)
         page = browser.new_page()
 
         login_page= LoginPage(page)

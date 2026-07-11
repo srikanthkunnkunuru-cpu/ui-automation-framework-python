@@ -3,11 +3,12 @@ from pages.login_page import LoginPage
 from pages.inventory_page import InventoryPage
 from pages.cart_page import CartPage
 from utils.constants import BASE_URL, VALID_USERNAME, VALID_PASSWORD
+from utils.constants import HEADLESS
 
 
 def test_remove_button():
     with sync_playwright() as p:
-        browser = p.chromium.launch(headless=False)
+        browser = p.chromium.launch(headless=HEADLESS)
         page = browser.new_page()
 
         loginPage = LoginPage(page)

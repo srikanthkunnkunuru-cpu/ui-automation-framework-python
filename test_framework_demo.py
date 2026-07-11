@@ -2,10 +2,11 @@ from playwright.sync_api import sync_playwright, expect
 from pages.login_page import LoginPage
 from pages.inventory_page import InventoryPage
 from utils.constants import BASE_URL, VALID_USERNAME, VALID_PASSWORD
+from utils.constants import HEADLESS
 
 def test_add_to_cart_using_framework():
     with sync_playwright() as p:
-        browser = p.chromium.launch(headless=False)
+        browser = p.chromium.launch(headless=HEADLESS)
         page = browser.new_page()
 
         login_page = LoginPage(page)
