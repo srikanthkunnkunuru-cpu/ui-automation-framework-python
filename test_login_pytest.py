@@ -23,7 +23,7 @@ def test_login2():
         page.goto("https://www.saucedemo.com")
         page.locator("#user-name").fill("standard_user")
         page.locator("#password").fill("secret_sauce")
-        page.locator("#login_button").click()
+        page.locator("#login-button").click()
 
         page.locator("#add-to-cart-sauce-labs-backpack").click()
 
